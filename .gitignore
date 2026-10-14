@@ -1,0 +1,38 @@
+.DS_Store
+__pycache__/
+*.py[cod]
+.venv/
+build/
+dist/
+*.egg-info/
+
+# Frontend build dependencies and disposable outputs. Source, lockfiles, and
+# published package assets remain trackable.
+node_modules/
+.pnpm-store/
+.vite/
+.cache/
+frontend/node_modules/
+frontend/dist/
+frontend/.cache/
+frontend/.vite/
+src/nining/web/frontend/node_modules/
+src/nining/web/frontend/dist/
+src/nining/web/frontend/.cache/
+src/nining/web/frontend/.vite/
+src/nining/web/assets/*.map
+
+# Local credentials and machine-specific configuration
+.env
+.env.*
+!.env.example
+config.local.toml
+config.*.local.toml
+secrets.toml
+secrets.*.toml
+
+# Raw provider responses may contain request metadata; commit only sanitized logs.
+logs/raw/
+work/
+tmp/
+
