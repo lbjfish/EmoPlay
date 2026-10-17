@@ -1,0 +1,22 @@
+{
+  "schema_version": "1.0",
+  "source_commit": "ef5e304198d3c2f30ec8e92dcb543b3242a1e9dd",
+  "source_path": "outputs/manifest.json",
+  "chapter_media": [
+    {
+      "trigger_id": "T1",
+      "media_type": "image",
+      "mime_type": "image/png"
+    },
+    {
+      "trigger_id": "T3",
+      "media_type": "image",
+      "mime_type": "image/png"
+    },
+    {
+      "trigger_id": "T5",
+      "media_type": "audio",
+      "mime_type": "audio/aiff"
+    }
+  ]
+}

@@ -1,0 +1,56 @@
+{
+  "brand": "Casa Lume（虚构的巴西家具品牌）",
+  "agent": {
+    "name": "Rafael",
+    "role": "AI 销售顾问",
+    "gender": "男",
+    "language": "pt-BR"
+  },
+  "channel": "海外 IM（类似 WhatsApp）；语音以语音条的形式发出",
+  "product": {
+    "sku": "NIV-3L",
+    "name": "Sofá Nivra 3 lugares",
+    "dimensions_cm": {
+      "width": 235,
+      "depth": 95,
+      "height": 84,
+      "seat_height": 44
+    },
+    "colors": [
+      {
+        "code": "CG-02",
+        "name": "Cinza Grafite"
+      },
+      {
+        "code": "OW-01",
+        "name": "Off-White"
+      }
+    ],
+    "fabric": "linho misto (55% linho, 45% poliéster)",
+    "legs": "madeira maciça, tom nogueira",
+    "price": {
+      "a_vista": "R$ 4.299,90",
+      "parcelado": "10x de R$ 429,99 sem juros"
+    },
+    "promo_until": "2026-10-20",
+    "delivery": {
+      "sao_paulo_capital": "7 a 10 dias úteis",
+      "frete": "grátis na capital"
+    },
+    "official_images": [
+      {
+        "file": "nivra_front.jpg",
+        "desc": "正面，Cinza Grafite，白底棚拍"
+      },
+      {
+        "file": "nivra_45.jpg",
+        "desc": "45° 侧面，Off-White，白底棚拍"
+      },
+      {
+        "file": "nivra_room.jpg",
+        "desc": "官方场景图，Cinza Grafite，样板间客厅"
+      }
+    ],
+    "customer_photos": "无"
+  }
+}

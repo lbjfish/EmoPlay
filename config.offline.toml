@@ -1,0 +1,37 @@
+[runtime]
+mode = "offline"
+allow_network = false
+strict_provenance = true
+output_root = "outputs"
+
+[storage]
+backend = "file"
+file_root = "work/state/files"
+database_is_rebuildable_index = true
+
+[playthrough]
+autosave = true
+checkpoint_on = ["trigger", "pre_generation", "post_generation", "human_decision"]
+rewind_continue_policy = "create_branch"
+preserve_provider_calls_on_rewind = true
+
+[models.text]
+provider = "deterministic"
+
+[models.image]
+provider = "placeholder"
+watermark = "PLACEHOLDER / NO IMAGE MODEL"
+final_eligible = false
+
+[models.voice]
+provider = "prompt_only"
+final_eligible = false
+
+[logging]
+directory = "logs"
+redact_headers = ["authorization", "api-key", "cookie"]
+save_raw_provider_responses = false
+
+[testing]
+fixture_root = "tests/fixtures"
+block_network_by_default = true

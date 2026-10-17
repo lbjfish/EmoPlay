@@ -1,0 +1,25 @@
+{
+  "currency": "USD",
+  "models": {
+    "gpt-5.6-sol-short-context-global": {
+      "cached_input_per_1m_tokens": 0.4,
+      "input_per_1m_tokens": 4.0,
+      "output_per_1m_tokens": 20.0
+    },
+    "gpt-image-2-global": {
+      "cached_input_image_per_1m_tokens": 2.0,
+      "cached_input_text_per_1m_tokens": 1.25,
+      "input_image_per_1m_tokens": 8.0,
+      "input_text_per_1m_tokens": 5.0,
+      "output_image_per_1m_tokens": 30.0
+    }
+  },
+  "notes": [
+    "Official list-price snapshot, not an invoice.",
+    "Actual cost requires usage tokens returned by the live call and the applicable billing agreement.",
+    "The official page publishes the same listed values for us-east-2 in this snapshot."
+  ],
+  "region_checked": "us-east-2",
+  "retrieved_at_utc": "2026-10-15T18:47:27Z",
+  "source": "https://azure.microsoft.com/en-us/pricing/details/cognitive-services/openai-service/"
+}

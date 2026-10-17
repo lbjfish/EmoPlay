@@ -1,0 +1,15 @@
+[identity]
+language = "zh-CN"
+preset_voice_id = "macos:Tingting"
+base_instructions = "年轻女性普通话预置音色；语速偏快、音色明亮、爱笑。人物设定要求轻微四川口音，但本地预置音色只能近似普通话；不得使用或克隆任何真人录音。"
+
+[reference]
+max_duration_seconds = 10
+text = "早呀，我是柠柠。今天有点忙，但我会记得好好吃饭，你也要哦。"
+
+[scenes.T2]
+instructions_delta = "早晨通勤，困且着急；在不改变预置音色身份的前提下加快节奏。"
+
+[scenes.T5]
+instructions_delta = "唱 K 后疲惫但开心，理想版本应轻微沙哑；本地预置音色无法可靠表现沙哑，因此生成物必须先标候选并人工试听。"
+

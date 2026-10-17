@@ -1,0 +1,24 @@
+{
+  "schema_version": "1.0",
+  "phase": "before_wav_fix",
+  "source": "real Chrome product audit v5",
+  "chapters": {
+    "T2": {
+      "audio_ready_state": 0,
+      "audio_network_state": 3,
+      "audio_error": 4,
+      "audio_duration_seconds": null,
+      "aiff_support": ""
+    },
+    "T5": {
+      "audio_ready_state": 0,
+      "audio_network_state": 3,
+      "audio_error": 4,
+      "audio_duration_seconds": null,
+      "aiff_support": ""
+    }
+  },
+  "external_requests": [],
+  "http_errors": [],
+  "console_errors": []
+}

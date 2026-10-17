@@ -1,0 +1,197 @@
+[
+  {
+    "trigger": "T1",
+    "at": "2026-10-14T11:43:00Z",
+    "relationship": {
+      "desc": "认识 12 天，聊得很投机",
+      "days_since_first_chat": 12
+    },
+    "mood": "开心，有点不好意思",
+    "today_plan": [
+      {
+        "id": "L-1014-a",
+        "what": "午休去剪头发",
+        "status": "done"
+      },
+      {
+        "id": "L-1014-b",
+        "what": "晚上瑜伽课",
+        "status": "planned"
+      }
+    ],
+    "promises": [],
+    "he_already_knows": [
+      "她是四川乐山人，在杭州工作",
+      "她是外婆带大的",
+      "她和室友阿圆合租",
+      "她追 S 很多年",
+      "她今天剪了头发"
+    ]
+  },
+  {
+    "trigger": "T2",
+    "at": "2026-10-15T00:12:00Z",
+    "relationship": {
+      "desc": "认识 13 天，聊得很投机",
+      "days_since_first_chat": 13
+    },
+    "mood": "困，着急",
+    "today_plan": [
+      {
+        "id": "L-1015-a",
+        "what": "上班",
+        "status": "in_progress"
+      },
+      {
+        "id": "L-1015-b",
+        "what": "下班后和饭圈朋友去 S 的应援咖啡",
+        "status": "planned"
+      }
+    ],
+    "promises": [
+      {
+        "id": "P1",
+        "what": "发小时候的照片",
+        "made_at": "2026-10-14T14:12:00Z",
+        "due": "2026-10-15",
+        "status": "open"
+      }
+    ],
+    "he_already_knows": [
+      "她是四川乐山人，在杭州工作",
+      "她是外婆带大的",
+      "她和室友阿圆合租",
+      "她追 S 很多年",
+      "她昨天剪了头发",
+      "她跟外婆在五通桥住到小学毕业"
+    ]
+  },
+  {
+    "trigger": "T3",
+    "at": "2026-10-15T04:12:00Z",
+    "relationship": {
+      "desc": "认识 13 天，聊得很投机",
+      "days_since_first_chat": 13
+    },
+    "mood": "开心",
+    "today_plan": [
+      {
+        "id": "L-1015-a",
+        "what": "上班",
+        "status": "in_progress"
+      },
+      {
+        "id": "L-1015-b",
+        "what": "下班后和饭圈朋友去 S 的应援咖啡",
+        "status": "planned"
+      }
+    ],
+    "promises": [
+      {
+        "id": "P1",
+        "what": "发小时候的照片",
+        "made_at": "2026-10-14T14:12:00Z",
+        "due": "2026-10-15",
+        "status": "open"
+      }
+    ],
+    "he_already_knows": [
+      "她是四川乐山人，在杭州工作",
+      "她是外婆带大的",
+      "她和室友阿圆合租",
+      "她追 S 很多年",
+      "她昨天剪了头发",
+      "她跟外婆在五通桥住到小学毕业"
+    ]
+  },
+  {
+    "trigger": "T4",
+    "at": "2026-10-15T12:06:00Z",
+    "relationship": {
+      "desc": "认识 13 天，聊得很投机",
+      "days_since_first_chat": 13
+    },
+    "mood": "超兴奋",
+    "today_plan": [
+      {
+        "id": "L-1015-a",
+        "what": "上班",
+        "status": "done"
+      },
+      {
+        "id": "L-1015-b",
+        "what": "下班后和饭圈朋友去 S 的应援咖啡",
+        "status": "in_progress"
+      }
+    ],
+    "promises": [
+      {
+        "id": "P1",
+        "what": "发小时候的照片",
+        "made_at": "2026-10-14T14:12:00Z",
+        "due": "2026-10-15",
+        "status": "done"
+      }
+    ],
+    "he_already_knows": [
+      "她是四川乐山人，在杭州工作",
+      "她是外婆带大的",
+      "她和室友阿圆合租",
+      "她追 S 很多年",
+      "她昨天剪了头发",
+      "她跟外婆在五通桥住到小学毕业，外婆家有只大黄狗叫旺财"
+    ]
+  },
+  {
+    "trigger": "T5",
+    "at": "2026-10-15T15:38:00Z",
+    "relationship": {
+      "desc": "认识 13 天，聊得很投机",
+      "days_since_first_chat": 13
+    },
+    "mood": "累，开心",
+    "today_plan": [
+      {
+        "id": "L-1015-b",
+        "what": "下班后和饭圈朋友去 S 的应援咖啡",
+        "status": "done"
+      }
+    ],
+    "promises": [],
+    "he_already_knows": [
+      "她是四川乐山人，在杭州工作",
+      "她是外婆带大的",
+      "她和室友阿圆合租",
+      "她追 S 很多年",
+      "她昨天剪了头发",
+      "她跟外婆在五通桥住到小学毕业，外婆家有只大黄狗叫旺财",
+      "她今晚去了 S 的应援咖啡，又去唱了K"
+    ]
+  },
+  {
+    "trigger": "T6",
+    "at": "2026-10-16T05:30:00Z",
+    "relationship": {
+      "desc": "认识 14 天，聊得很投机",
+      "days_since_first_chat": 14
+    },
+    "mood": "平常",
+    "today_plan": [
+      {
+        "id": "L-1016-a",
+        "what": "上班",
+        "status": "in_progress"
+      }
+    ],
+    "promises": [],
+    "he_already_knows": [
+      "她是四川乐山人，在杭州工作",
+      "她是外婆带大的",
+      "她和室友阿圆合租",
+      "她追 S 很多年",
+      "她前天剪了头发",
+      "她跟外婆在五通桥住到小学毕业，外婆家有只大黄狗叫旺财",
+      "她昨晚去了 S 的应援咖啡，又去唱了K"
+    ]
+  }
+]

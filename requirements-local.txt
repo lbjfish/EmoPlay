@@ -1,0 +1,3 @@
+# Optional local-model adapters only. Keep the default install lightweight.
+# Pin concrete packages after a local adapter is implemented and verified.
+

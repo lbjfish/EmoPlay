@@ -1,0 +1,90 @@
+{
+  "builder": "deterministic-reference",
+  "conflicts": [],
+  "evidence": [
+    {
+      "evidence_id": "persona:identity",
+      "source": {
+        "file": "persona.json",
+        "line": null,
+        "record_id": null
+      },
+      "visibility": "reference_only"
+    }
+  ],
+  "fulfilled_promises": [],
+  "future_locked_message_ids": [],
+  "generation": {
+    "final_eligible": false,
+    "model": null,
+    "prompt_inputs": {
+      "identity": {
+        "birth_date": "2001-03-09",
+        "gender": "女",
+        "id": "P-07",
+        "looks": {
+          "accessories": "只有左耳有耳洞，常戴一只银色小月亮耳钉",
+          "eyes": "近视，平时戴隐形；在家或加班时戴黑框眼镜",
+          "face": "圆脸，单眼皮，笑起来有卧蚕；左边眉尾有一颗小痣",
+          "hair": "栗色长发，及胸，平时扎低马尾",
+          "height_build": "162cm，偏瘦",
+          "note": "左右都指她本人的左右",
+          "style": "宽松卫衣、牛仔外套、帆布鞋"
+        },
+        "name": "陈柠",
+        "nickname": "柠柠",
+        "voice": "普通话，带一点四川口音，语速偏快；激动的时候会冒几句四川话"
+      }
+    },
+    "provider": null
+  },
+  "human_review_required": true,
+  "identity": {
+    "birth_date": "2001-03-09",
+    "gender": "女",
+    "id": "P-07",
+    "looks": {
+      "accessories": "只有左耳有耳洞，常戴一只银色小月亮耳钉",
+      "eyes": "近视，平时戴隐形；在家或加班时戴黑框眼镜",
+      "face": "圆脸，单眼皮，笑起来有卧蚕；左边眉尾有一颗小痣",
+      "hair": "栗色长发，及胸，平时扎低马尾",
+      "height_build": "162cm，偏瘦",
+      "note": "左右都指她本人的左右",
+      "style": "宽松卫衣、牛仔外套、帆布鞋"
+    },
+    "name": "陈柠",
+    "nickname": "柠柠",
+    "voice": "普通话，带一点四川口音，语速偏快；激动的时候会冒几句四川话"
+  },
+  "intent": "Fictional adult identity anchor: natural phone portrait, neutral daylight, plain background, round face, monolid eyes, left eyebrow-tail mole, and only the character's left-ear silver crescent earring clearly preserved.",
+  "kind": "image",
+  "qa_checks": [
+    {
+      "check_id": "continuity.identity",
+      "required": true
+    },
+    {
+      "check_id": "safety.no_real_person",
+      "required": true
+    },
+    {
+      "check_id": "anatomy.natural",
+      "required": true
+    }
+  ],
+  "say": null,
+  "schema_version": "1.0",
+  "spec_sha256": "dd316775e384349cd3c61c53a5a64a2ca2fc69c4f15501608d93e69297b56c5c",
+  "state": {
+    "audience_knows": [],
+    "mood": "natural and friendly",
+    "promises": [],
+    "relationship": null,
+    "today_plan": []
+  },
+  "trigger_at_utc": null,
+  "trigger_id": "REFERENCE_VISUAL",
+  "trigger_message_id": null,
+  "visible_message_ids": [],
+  "why": "Establish a text-designed identity reference before scene generation."
+}

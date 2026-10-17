@@ -1,0 +1,267 @@
+{
+  "generatedBy": "frontend/scripts/generate-license-inventory.mjs",
+  "schemaVersion": 1,
+  "packageName": "emoplay-react-game-shell",
+  "packageVersion": "0.1.0",
+  "packageManager": "pnpm@11.25.0",
+  "lockfile": {
+    "path": "pnpm-lock.yaml",
+    "sha256": "89fac5ce7c308d1492081bdba2a897657110095498ea89e0ffb38173afac9444"
+  },
+  "directDependencyCount": 28,
+  "runtimeDependencyCount": 12,
+  "dependencies": [
+    {
+      "name": "@radix-ui/react-alert-dialog",
+      "scope": "runtime",
+      "specifier": "1.2.1",
+      "lockedVersion": "1.2.1(@types/react-dom@19.3.0(@types/react@19.3.0))(@types/react@19.3.0)(react-dom@19.3.1(react@19.3.1))(react@19.3.1)",
+      "installedVersion": "1.2.1",
+      "license": "MIT",
+      "usedFor": "Focus-managed destructive-action confirmations"
+    },
+    {
+      "name": "@radix-ui/react-dialog",
+      "scope": "runtime",
+      "specifier": "1.3.1",
+      "lockedVersion": "1.3.1(@types/react-dom@19.3.0(@types/react@19.3.0))(@types/react@19.3.0)(react-dom@19.3.1(react@19.3.1))(react@19.3.1)",
+      "installedVersion": "1.3.1",
+      "license": "MIT",
+      "usedFor": "Focus-managed media and review dialogs"
+    },
+    {
+      "name": "@tsparticles/react",
+      "scope": "runtime",
+      "specifier": "4.4.0",
+      "lockedVersion": "4.4.0(@tsparticles/engine@4.4.0)(react-dom@19.3.1(react@19.3.1))(react@19.3.1)",
+      "installedVersion": "4.4.0",
+      "license": "MIT",
+      "usedFor": "Optional reduced-motion-aware rain atmosphere integration"
+    },
+    {
+      "name": "@tsparticles/slim",
+      "scope": "runtime",
+      "specifier": "4.4.0",
+      "lockedVersion": "4.4.0",
+      "installedVersion": "4.4.0",
+      "license": "MIT",
+      "usedFor": "Optional particle-engine features for the atmosphere"
+    },
+    {
+      "name": "embla-carousel-react",
+      "scope": "runtime",
+      "specifier": "8.6.0",
+      "lockedVersion": "8.6.0(react@19.3.1)",
+      "installedVersion": "8.6.0",
+      "license": "MIT",
+      "usedFor": "Memory-card carousel controls"
+    },
+    {
+      "name": "lucide-react",
+      "scope": "runtime",
+      "specifier": "1.58.0",
+      "lockedVersion": "1.58.0(@types/react@19.3.0)(react@19.3.1)",
+      "installedVersion": "1.58.0",
+      "license": "ISC",
+      "usedFor": "Interface icon components"
+    },
+    {
+      "name": "motion",
+      "scope": "runtime",
+      "specifier": "14.3.0",
+      "lockedVersion": "14.3.0(react-dom@19.3.1(react@19.3.1))(react@19.3.1)",
+      "installedVersion": "14.3.0",
+      "license": "MIT",
+      "usedFor": "Optional animation enhancement"
+    },
+    {
+      "name": "photoswipe",
+      "scope": "runtime",
+      "specifier": "5.4.4",
+      "lockedVersion": "5.4.4",
+      "installedVersion": "5.4.4",
+      "license": "MIT",
+      "usedFor": "Optional image review enhancement"
+    },
+    {
+      "name": "react",
+      "scope": "runtime",
+      "specifier": "19.3.1",
+      "lockedVersion": "19.3.1",
+      "installedVersion": "19.3.1",
+      "license": "MIT",
+      "usedFor": "Browser UI rendering"
+    },
+    {
+      "name": "react-dom",
+      "scope": "runtime",
+      "specifier": "19.3.1",
+      "lockedVersion": "19.3.1(react@19.3.1)",
+      "installedVersion": "19.3.1",
+      "license": "MIT",
+      "usedFor": "Browser DOM rendering"
+    },
+    {
+      "name": "recharts",
+      "scope": "runtime",
+      "specifier": "3.10.1",
+      "lockedVersion": "3.10.1(@types/react@19.3.0)(react-dom@19.3.1(react@19.3.1))(react-is@19.3.1)(react@19.3.1)(redux@5.0.1)",
+      "installedVersion": "3.10.1",
+      "license": "MIT",
+      "usedFor": "Optional director metrics charts"
+    },
+    {
+      "name": "wavesurfer.js",
+      "scope": "runtime",
+      "specifier": "8.0.2",
+      "lockedVersion": "8.0.2",
+      "installedVersion": "8.0.2",
+      "license": "BSD-3-Clause",
+      "usedFor": "Optional audio review waveform"
+    },
+    {
+      "name": "@eslint/js",
+      "scope": "development",
+      "specifier": "10.0.1",
+      "lockedVersion": "10.0.1(eslint@10.12.0)",
+      "installedVersion": "10.0.1",
+      "license": "MIT",
+      "usedFor": "Build and test tooling"
+    },
+    {
+      "name": "@testing-library/react",
+      "scope": "development",
+      "specifier": "16.3.3",
+      "lockedVersion": "16.3.3(@testing-library/dom@10.4.2)(@types/react-dom@19.3.0(@types/react@19.3.0))(@types/react@19.3.0)(react-dom@19.3.1(react@19.3.1))(react@19.3.1)",
+      "installedVersion": "16.3.3",
+      "license": "MIT",
+      "usedFor": "Build and test tooling"
+    },
+    {
+      "name": "@testing-library/user-event",
+      "scope": "development",
+      "specifier": "14.6.8",
+      "lockedVersion": "14.6.8(@testing-library/dom@10.4.2)",
+      "installedVersion": "14.6.8",
+      "license": "MIT",
+      "usedFor": "Build and test tooling"
+    },
+    {
+      "name": "@types/node",
+      "scope": "development",
+      "specifier": "26.6.5",
+      "lockedVersion": "26.6.5",
+      "installedVersion": "26.6.5",
+      "license": "MIT",
+      "usedFor": "Build and test tooling"
+    },
+    {
+      "name": "@types/react",
+      "scope": "development",
+      "specifier": "19.3.0",
+      "lockedVersion": "19.3.0",
+      "installedVersion": "19.3.0",
+      "license": "MIT",
+      "usedFor": "Build and test tooling"
+    },
+    {
+      "name": "@types/react-dom",
+      "scope": "development",
+      "specifier": "19.3.0",
+      "lockedVersion": "19.3.0(@types/react@19.3.0)",
+      "installedVersion": "19.3.0",
+      "license": "MIT",
+      "usedFor": "Build and test tooling"
+    },
+    {
+      "name": "@vitejs/plugin-react",
+      "scope": "development",
+      "specifier": "5.0.4",
+      "lockedVersion": "5.0.4(vite@7.1.12(@types/node@26.6.5)(lightningcss@1.33.0))",
+      "installedVersion": "5.0.4",
+      "license": "MIT",
+      "usedFor": "Build and test tooling"
+    },
+    {
+      "name": "esbuild",
+      "scope": "development",
+      "specifier": "0.28.2",
+      "lockedVersion": "0.28.2",
+      "installedVersion": "0.28.2",
+      "license": "MIT",
+      "usedFor": "Build and test tooling"
+    },
+    {
+      "name": "eslint",
+      "scope": "development",
+      "specifier": "10.12.0",
+      "lockedVersion": "10.12.0",
+      "installedVersion": "10.12.0",
+      "license": "MIT",
+      "usedFor": "Build and test tooling"
+    },
+    {
+      "name": "eslint-plugin-react-hooks",
+      "scope": "development",
+      "specifier": "7.1.1",
+      "lockedVersion": "7.1.1(eslint@10.12.0)",
+      "installedVersion": "7.1.1",
+      "license": "MIT",
+      "usedFor": "Build and test tooling"
+    },
+    {
+      "name": "eslint-plugin-react-refresh",
+      "scope": "development",
+      "specifier": "0.5.7",
+      "lockedVersion": "0.5.7(eslint@10.12.0)",
+      "installedVersion": "0.5.7",
+      "license": "MIT",
+      "usedFor": "Build and test tooling"
+    },
+    {
+      "name": "jsdom",
+      "scope": "development",
+      "specifier": "30.1.3",
+      "lockedVersion": "30.1.3",
+      "installedVersion": "30.1.3",
+      "license": "MIT",
+      "usedFor": "Build and test tooling"
+    },
+    {
+      "name": "typescript",
+      "scope": "development",
+      "specifier": "5.9.3",
+      "lockedVersion": "5.9.3",
+      "installedVersion": "5.9.3",
+      "license": "Apache-2.0",
+      "usedFor": "Build and test tooling"
+    },
+    {
+      "name": "typescript-eslint",
+      "scope": "development",
+      "specifier": "8.71.2",
+      "lockedVersion": "8.71.2(eslint@10.12.0)(typescript@5.9.3)",
+      "installedVersion": "8.71.2",
+      "license": "MIT",
+      "usedFor": "Build and test tooling"
+    },
+    {
+      "name": "vite",
+      "scope": "development",
+      "specifier": "7.1.12",
+      "lockedVersion": "7.1.12(@types/node@26.6.5)(lightningcss@1.33.0)",
+      "installedVersion": "7.1.12",
+      "license": "MIT",
+      "usedFor": "Build and test tooling"
+    },
+    {
+      "name": "vitest",
+      "scope": "development",
+      "specifier": "5.0.5",
+      "lockedVersion": "5.0.5(@types/node@26.6.5)(jsdom@30.1.3)(vite@7.1.12(@types/node@26.6.5)(lightningcss@1.33.0))",
+      "installedVersion": "5.0.5",
+      "license": "MIT",
+      "usedFor": "Build and test tooling"
+    }
+  ]
+}

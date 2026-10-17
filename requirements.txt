@@ -1,0 +1,4 @@
+# EmoPlay's offline runtime intentionally uses only Python's standard library.
+# Install the project and its `emoplay` command with: python -m pip install -e .
+# sqlite3 is part of Python and must not be listed here.
+

@@ -1,0 +1,67 @@
+# Creator-only paid/live asset-generation example. It is not required to play.
+# Copy to ignored config.local.toml only when intentionally regenerating media.
+# Every developer must supply their own endpoint, credential, and model/deployment
+# environment values. This file grants no Azure or DeepSeek model access.
+[runtime]
+mode = "hybrid"
+allow_network = true
+strict_provenance = true
+output_root = "outputs"
+
+[storage]
+backend = "file"
+file_root = "work/state/azure-live-files"
+fallback_backend = "file"
+database_is_rebuildable_index = true
+
+[playthrough]
+autosave = true
+checkpoint_on = ["trigger", "pre_generation", "post_generation", "human_decision"]
+rewind_continue_policy = "create_branch"
+preserve_provider_calls_on_rewind = true
+
+[models.text]
+provider = "azure_openai"
+endpoint_env = "AZURE_TEXT_ENDPOINT"
+api_key_env = "AZURE_TEXT_API_KEY"
+model_env = "AZURE_TEXT_MODEL"
+fallback_providers = ["deepseek", "deterministic"]
+max_completion_tokens = 1200
+api_style = "responses"
+
+[providers.deepseek]
+provider = "deepseek"
+endpoint_env = "DEEPSEEK_ENDPOINT"
+api_key_env = "DEEPSEEK_API_KEY"
+model_env = "DEEPSEEK_TEXT_MODEL"
+
+[models.image]
+provider = "azure_openai"
+endpoint_env = "AZURE_IMAGE_ENDPOINT"
+api_key_env = "AZURE_IMAGE_API_KEY"
+model_env = "AZURE_IMAGE_MODEL"
+fallback_provider = "placeholder"
+quality = "high"
+size = "1024x1024"
+output_format = "png"
+timeout_seconds = 900
+transport = "curl_ipv4"
+
+[models.voice]
+provider = "macos_say"
+enabled = true
+executable = "/usr/bin/say"
+voice = "Tingting"
+rate = 220
+output_format = "aiff"
+fallback_provider = "prompt_only"
+
+[logging]
+directory = "logs"
+redact_headers = ["authorization", "api-key", "cookie"]
+save_raw_provider_responses = false
+
+[testing]
+live_tests_env = "RUN_LIVE_TESTS"
+fixture_root = "tests/fixtures"
+block_network_by_default = true

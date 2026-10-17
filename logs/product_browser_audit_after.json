@@ -1,0 +1,45 @@
+{
+  "schema_version": "1.0",
+  "phase": "after_wav_fix",
+  "source": "real Chrome clean-catalog product audit",
+  "chapters": {
+    "T2": {
+      "audio_ready_state": 1,
+      "audio_network_state": 1,
+      "audio_error": null,
+      "audio_duration_seconds": 7.569751,
+      "playback": {
+        "ok": true,
+        "current_time_seconds": 0.387082,
+        "error": null
+      }
+    },
+    "T5": {
+      "audio_ready_state": 4,
+      "audio_network_state": 1,
+      "audio_error": null,
+      "audio_duration_seconds": 5.131655,
+      "playback": {
+        "ok": true,
+        "current_time_seconds": 0.420761,
+        "error": null
+      }
+    }
+  },
+  "revisit_after_completion": {
+    "T2_locks": [false, false, false, false, false, false]
+  },
+  "director": {
+    "desk_contained": true,
+    "json_contained": true,
+    "page_contained": true
+  },
+  "mobile_T6": {
+    "current_chapter_visible": true,
+    "hero_contained": true,
+    "no_horizontal_overflow": true
+  },
+  "external_requests": [],
+  "http_errors": [],
+  "console_errors": []
+}

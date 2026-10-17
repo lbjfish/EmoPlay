@@ -1,0 +1,252 @@
+{
+  "browser_audio_comparison": {
+    "after": {
+      "chapters": {
+        "T2": {
+          "duration_seconds": 7.569751,
+          "error": null,
+          "ok": true,
+          "playback_current_time_seconds": 0.387082
+        },
+        "T5": {
+          "duration_seconds": 5.131655,
+          "error": null,
+          "ok": true,
+          "playback_current_time_seconds": 0.420761
+        }
+      },
+      "percent": 100.0,
+      "playable_count": 2,
+      "total": 2
+    },
+    "before": {
+      "chapters": {
+        "T2": {
+          "duration_seconds": null,
+          "error": 4,
+          "ok": false,
+          "playback_current_time_seconds": null
+        },
+        "T5": {
+          "duration_seconds": null,
+          "error": 4,
+          "ok": false,
+          "playback_current_time_seconds": null
+        }
+      },
+      "percent": 0.0,
+      "playable_count": 0,
+      "total": 2
+    }
+  },
+  "gpt_image_2": {
+    "max_latency_ms": 341980,
+    "mean_latency_ms": 197051,
+    "median_latency_ms": 176138,
+    "min_latency_ms": 111622,
+    "successful_call_count": 7,
+    "total_estimated_cost_amount_micros": 1724952,
+    "total_tokens": 95464
+  },
+  "notes": [
+    "Null cost is unknown; zero billing state is counted as zero.",
+    "A remote call was attempted; failed unknown-billing calls remain null and are not retried automatically."
+  ],
+  "product_coverage_comparison": {
+    "after": {
+      "browser_playable_voice": {
+        "count": 2,
+        "percent": 100.0,
+        "total": 2
+      },
+      "chapter_backgrounds": {
+        "count": 6,
+        "percent": 100.0,
+        "total": 6
+      },
+      "primary_trigger_media": {
+        "count": 6,
+        "percent": 100.0,
+        "total": 6
+      }
+    },
+    "before": {
+      "browser_playable_voice": {
+        "count": 0,
+        "percent": 0.0,
+        "total": 2
+      },
+      "chapter_backgrounds": {
+        "count": 2,
+        "percent": 33.3,
+        "total": 6
+      },
+      "primary_trigger_media": {
+        "count": 3,
+        "percent": 50.0,
+        "total": 6
+      }
+    },
+    "before_source_commit": "ef5e304198d3c2f30ec8e92dcb543b3242a1e9dd",
+    "percentage_point_change": {
+      "browser_playable_voice": 100.0,
+      "chapter_backgrounds": 66.7,
+      "primary_trigger_media": 50.0
+    }
+  },
+  "providers": {
+    "azure_openai": {
+      "billing_states": [
+        "estimated",
+        "unknown",
+        "zero"
+      ],
+      "call_count": 20,
+      "median_latency_ms": 156355,
+      "success_count": 7,
+      "total_cost_amount_micros": 1724952
+    },
+    "deepseek": {
+      "billing_states": [
+        "zero"
+      ],
+      "call_count": 11,
+      "median_latency_ms": null,
+      "success_count": 0,
+      "total_cost_amount_micros": 0
+    },
+    "deterministic": {
+      "billing_states": [
+        "zero"
+      ],
+      "call_count": 16,
+      "median_latency_ms": 0,
+      "success_count": 16,
+      "total_cost_amount_micros": 0
+    },
+    "macos_say": {
+      "billing_states": [
+        "zero"
+      ],
+      "call_count": 7,
+      "median_latency_ms": 1179,
+      "success_count": 7,
+      "total_cost_amount_micros": 0
+    }
+  },
+  "remote_attempts": [
+    {
+      "billing_state": "unknown",
+      "cost_amount_micros": null,
+      "error_code": "transport_timeout",
+      "latency_ms": 31256,
+      "provider": "azure_openai",
+      "purpose": "generate_visual_reference attempt 1",
+      "run_id": "run_d42588a930dc46f4a46af51185a0b39d",
+      "status": "failed"
+    },
+    {
+      "billing_state": "estimated",
+      "cost_amount_micros": 213965,
+      "error_code": null,
+      "latency_ms": 176138,
+      "provider": "azure_openai",
+      "purpose": "generate_visual_reference attempt 1",
+      "run_id": "run_28a60c7747c543dc8d0f5491bf2a57d8",
+      "status": "success"
+    },
+    {
+      "billing_state": "zero",
+      "cost_amount_micros": 0,
+      "error_code": "invalid_request",
+      "latency_ms": 4,
+      "provider": "azure_openai",
+      "purpose": "generate_image attempt 1",
+      "run_id": "run_c56d21a5833d496180f9084ed4d4e8ee",
+      "status": "failed"
+    },
+    {
+      "billing_state": "estimated",
+      "cost_amount_micros": 239342,
+      "error_code": null,
+      "latency_ms": 341980,
+      "provider": "azure_openai",
+      "purpose": "generate_image attempt 1",
+      "run_id": "run_f01a97004a514e11bfdc9cf32835fa87",
+      "status": "success"
+    },
+    {
+      "billing_state": "estimated",
+      "cost_amount_micros": 251467,
+      "error_code": null,
+      "latency_ms": 287841,
+      "provider": "azure_openai",
+      "purpose": "generate_image attempt 1",
+      "run_id": "run_2ffcf995b04548daaa58e1da72427d2f",
+      "status": "success"
+    },
+    {
+      "billing_state": "estimated",
+      "cost_amount_micros": 255877,
+      "error_code": null,
+      "latency_ms": 179473,
+      "provider": "azure_openai",
+      "purpose": "generate_image attempt 1",
+      "run_id": "run_da8fef97f0824b43a9aaf67c85c4d3e5",
+      "status": "success"
+    },
+    {
+      "billing_state": "estimated",
+      "cost_amount_micros": 260452,
+      "error_code": null,
+      "latency_ms": 111622,
+      "provider": "azure_openai",
+      "purpose": "generate_image attempt 1",
+      "run_id": "run_a9ec2a09361b4f8cb6faf588fb22e9c6",
+      "status": "success"
+    },
+    {
+      "billing_state": "estimated",
+      "cost_amount_micros": 246942,
+      "error_code": null,
+      "latency_ms": 156355,
+      "provider": "azure_openai",
+      "purpose": "generate_image attempt 1",
+      "run_id": "run_ff378bef3a5e4874bb9afa5822dc8044",
+      "status": "success"
+    },
+    {
+      "billing_state": "estimated",
+      "cost_amount_micros": 256907,
+      "error_code": null,
+      "latency_ms": 125949,
+      "provider": "azure_openai",
+      "purpose": "generate_image attempt 1",
+      "run_id": "run_5dc0e49b5ee647e592b3fedd97d34012",
+      "status": "success"
+    }
+  ],
+  "remote_provider_costs_included": true,
+  "schema_version": "1.0",
+  "source_files": [
+    "logs/provider_calls.jsonl",
+    "logs/product_coverage_baseline.json",
+    "logs/product_browser_audit_before.json",
+    "logs/product_browser_audit_after.json",
+    "outputs/manifest.json"
+  ],
+  "tuning_comparison": {
+    "after": {
+      "duration_ms": 5132,
+      "rate": 220
+    },
+    "before": {
+      "duration_ms": 7593,
+      "rate": 180
+    },
+    "metric": "T5 preset-voice duration",
+    "reduction_ms": 2461,
+    "reduction_percent": 32.4,
+    "selection_status": "accepted and losslessly rewrapped as browser WAV"
+  }
+}

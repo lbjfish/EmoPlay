@@ -1,0 +1,70 @@
+[runtime]
+mode = "offline"
+allow_network = false
+strict_provenance = true
+output_root = "outputs"
+
+[storage]
+# Default release path: portable file facts, no SQLite database required.
+# sqlite_path is kept only for users who deliberately opt in to backend = "sqlite".
+backend = "file"
+sqlite_path = "work/state/nining.sqlite3"
+file_root = "work/state/files"
+fallback_backend = "file"
+database_is_rebuildable_index = true
+busy_timeout_ms = 5000
+wal = true
+
+[playthrough]
+autosave = true
+checkpoint_on = ["trigger", "pre_generation", "post_generation", "human_decision"]
+rewind_continue_policy = "create_branch"
+preserve_provider_calls_on_rewind = true
+
+[models.text]
+provider = "azure_openai"
+endpoint_env = "AZURE_TEXT_ENDPOINT"
+api_key_env = "AZURE_TEXT_API_KEY"
+model_env = "AZURE_TEXT_MODEL"
+api_style = "responses"
+fallback_provider = "deterministic"
+fallback_providers = ["deepseek", "deterministic"]
+
+[providers.deepseek]
+provider = "deepseek"
+endpoint_env = "DEEPSEEK_ENDPOINT"
+api_key_env = "DEEPSEEK_API_KEY"
+model_env = "DEEPSEEK_TEXT_MODEL"
+
+[models.image]
+provider = "azure_openai"
+endpoint_env = "AZURE_IMAGE_ENDPOINT"
+api_key_env = "AZURE_IMAGE_API_KEY"
+model_env = "AZURE_IMAGE_MODEL"
+quality = "high"
+output_format = "png"
+fallback_provider = "placeholder"
+
+[models.voice]
+enabled = false
+provider = "prompt_only"
+endpoint_env = "VOICE_ENDPOINT"
+api_key_env = "VOICE_API_KEY"
+model_env = "VOICE_MODEL"
+profile_path = "voice_profile.example.toml"
+output_format = "wav"
+fallback_provider = "prompt_only"
+
+# provider = "prompt_only" only emits voice specifications and never creates audio.
+# Change provider and enabled only after a real TTS adapter is configured.
+
+[logging]
+directory = "logs"
+redact_headers = ["authorization", "api-key"]
+save_raw_provider_responses = false
+
+[testing]
+live_tests_env = "RUN_LIVE_TESTS"
+fixture_root = "tests/fixtures"
+block_network_by_default = true
+

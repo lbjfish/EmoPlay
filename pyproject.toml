@@ -1,0 +1,47 @@
+[build-system]
+requires = ["setuptools>=68"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "emoplay"
+version = "0.1.0"
+description = "Offline-first interactive storybook with auditable multimodal generation"
+authors = [{ name = "lbjfish" }]
+readme = "README.md"
+requires-python = ">=3.11"
+dependencies = []
+
+[project.urls]
+Homepage = "https://github.com/lbjfish/EmoPlay"
+Repository = "https://github.com/lbjfish/EmoPlay.git"
+Issues = "https://github.com/lbjfish/EmoPlay/issues"
+
+[project.scripts]
+emoplay = "nining.cli:main"
+nining = "nining.cli:main"
+
+[tool.setuptools]
+package-dir = {"" = "src"}
+
+[tool.setuptools.packages.find]
+where = ["src"]
+
+[tool.setuptools.package-data]
+"nining.web" = [
+  "assets/*.css",
+  "assets/*.html",
+  "assets/*.js",
+]
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]
+addopts = "-ra"
+
+[tool.coverage.run]
+branch = true
+source = ["nining"]
+
+[[tool.mypy.overrides]]
+module = ["reportlab.*"]
+ignore_missing_imports = true
+
