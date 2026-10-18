@@ -26,3 +26,4 @@
 | 2026-10-17 | local-state-initialization | 增加安全 CLI 初始化和 FileStorage reset，记录使用方式，并把本地演示初始化到 T1。 | 重启恢复与干净演示初始化必须是两个显式操作。 | 218 项 Python 测试、严格审计、marker/lock 安全门及 Live API 锁状态 `[false,true,true,true,true,true]`。 |
 | 2026-10-17 | chinese-documentation | 将 development 与 submission 当前说明统一为中文叙述，并重新生成中文 PDF 元数据、页脚和 manifest。 | 公开仓库文档需要面向中文开发者，同时保留命令、路径、字段名和协议标识的准确性。 | 9 份 Markdown 未翻译正文扫描为 0；两份 PDF 均为 1 页并完成渲染复核；218 项 Python 测试、前端验证和严格审计通过。 |
 | 2026-10-17 | readme-operation-video | 使用开源 Pillow 与 FFmpeg 将现有产品截图编排为操作视频，输出 GIF 预览、H.264 MP4 和封面图，并嵌入 README。 | GitHub 首页需要无需启动项目即可理解核心操作的轻量演示。 | 297 帧、1280×720、12 fps；6 个时间点和导演台画面复核；MP4 全帧解码通过；媒体格式/大小回归测试通过。 |
+| 2026-10-18 | sales-supervisor-loop-redesign | 将附加题重写为 Supervisor Loop + 渐进式领域 Worker，增加完整 JSON 契约、纯文本流程、动态跨域依赖和 S1–S4 推演。 | 旧稿的一次性 DAG、全局具体工具路由和代码骨架与最终讨论结论不一致。 | 11 个 JSON 块解析通过；`git diff --check` 通过；旧架构术语和代码块扫描无残留。 |

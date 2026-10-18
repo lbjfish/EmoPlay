@@ -1,29 +1,38 @@
-# Casa Lume 全球多模态销售 Agent 技术方案摘要
+# Casa Lume 全球多模态销售 Agent 方案摘要
 
-> 面向多品牌、多国家、多渠道的可落地销售 Agent 架构，覆盖关键接口、质量门禁和实施路径。完整设计见
+> 完整技术设计、Supervisor JSON 契约、测试与实施路径见
 > [`docs/design/casa_lume_langgraph_sales_agent.md`](../design/casa_lume_langgraph_sales_agent.md)。
 
-方案采用 LangGraph `StateGraph` 构建“确定性门禁 + Agent 路由”的主管-工作者系统。输入先经渠道适配、ASR、语种识别和结构化意图抽取，将 `Nivra` 解析为 SKU `NIV-3L`；Catalog/PIM、库存、价格、物流、DAM 和客户授权服务是唯一事实源。Supervisor 负责规划、用 `Send` 动态派发单职责 Worker、合并证据并审核，不直接编造商品事实；Worker 以 `pending/running/completed/failed/blocked` 回写状态。仅并行无依赖任务，有依赖的任务严格串行。发送或产生费用前通过 `interrupt()` 进入人工审批，Checkpointer 按 `thread_id` 支持恢复与幂等。
+方案采用 LangGraph 承载 **Supervisor Loop + 渐进式领域 Worker**。API Gateway 只负责鉴权、限流、文件安全和幂等；Supervisor 负责理解用户目标、选择领域、安排并行或串行、审核每次结果并决定是否结束。Supervisor 只看到 Catalog、Commerce、Asset、Room、Media、Language、Privacy 七类领域入口，具体 API 仅对所属 Domain Worker 可见。
 
-```mermaid
-flowchart LR
-  A[文本/语音/图片] --> B[ASR + Language ID + 意图/实体]
-  B --> C[SKU 解析与 Supervisor 计划]
-  C --> D{动态 Send}
-  D --> E[商品事实 Worker]
-  D --> F[语言与语音 Worker]
-  D --> G[空间视觉 Worker]
-  D --> H[隐私合规 Worker]
-  E & F & G & H --> I[证据合并与独立 QA]
-  I --> J{事实/隐私/几何/披露门禁}
-  J -->|通过| K[人工销售审批]
-  J -->|缺证| L[澄清或诚实拒绝]
-  K --> M[按客户语言本地化 + TTS/文本发送]
+```text
+客户文本 / 语音 / 图片
+        ↓
+输入标准化：ASR、语种识别、附件安全处理
+        ↓
+Supervisor：目标、已有事实、缺失能力
+        ↓
+按需启动一个或多个领域 Worker
+        ↓
+Worker 返回事实、媒体产物或 needed_capabilities
+        ↓
+Supervisor 审核并写入全局状态
+        ↓
+不满足目标 → 补调领域 / 恢复 Worker / 澄清 / 降级
+满足目标   → 事实、隐私、几何、媒体门禁
+        ↓
+必要的人审 → 按客户语言输出文本或 TTS 语音 → 幂等发送
 ```
 
-- **S1 绿色款**：Catalog 和库存 Worker 先核对颜色。当前只有 CG-02 与 OW-01；未证实绿色 SKU 时禁止生成“在售绿色实物”。客户确认后可生成醒目标注的概念改色图，并锁定结构、面料和椅腿约束。
-- **S2 客厅试摆**：商品宽 2.35m、墙宽 2.60m，总余量 25cm，但不据此保证可用。图片处理前取得用途与保留期授权，再进行墙面/地面分割、深度与相机估计；优先加载官方 CAD/glTF，并在 React Three Fiber 试摆器中支持拖拽、旋转、尺度和遮挡。缺 CAD 时只提供“近似模拟”与置信度，不宣称精确安装。
-- **S3 葡语语音**：从实时 API 快照读取价格、10 期免息、20/10 截止、7-10 个工作日和免运费，再进行 pt-BR 本地化与 TTS。生成后通过 ASR 回听，并对数字、币种和日期做结构化 diff。ASR 负责语音转文字，TTS 负责输出语音。
-- **S4 买家实拍**：DAM/UGC 服务返回“无”时进入拒绝伪造分支，不生成假晒单；替代方案包括明确标注的官方场景图、交互试摆链接或真实晒单回访登记。
+跨领域依赖不预先写死。Tool Contract 只描述本领域接口的必填参数、可选参数语义、输出、TTL、错误和权限。以客厅适配为例，在图片授权已经通过的前提下，Room Worker 可先完成空间几何；当用户目标是判断 Nivra 能否放下时，它会返回缺少 `ProductDimensions`。Supervisor 再进入 Catalog 领域，Catalog Worker 自行选择商品 API，返回官方尺寸后恢复 Room Worker。所有领域结果都回到 Supervisor，由同一个决策循环判断继续还是结束。
 
-EmoPlay 已落地状态、证据、checkpoint、工具边界、人工门禁、fail-closed 和可审计日志，当前运行时仍是确定性单领域服务，未集成 LangGraph 多 Agent、自动语种识别或全球商品 API。Casa Lume 方案将这些已验证原则扩展为通用全球销售编排平台。核心指标包括 SKU/价格事实正确率 100%、高风险越权发送 0、数字语音回听通过率 100%，以及空间尺度误差、p95 延迟、单会话成本、人工接管率和转化提升。
+四个请求的处理：
+
+- **S1 绿色款**：Catalog 证实当前只有 CG-02 和 OW-01，不能生成“在售绿色实物”。客户明确接受后才制作带显著“概念模拟、非在售颜色”标记的改色图。
+- **S2 客厅试摆**：Privacy、Catalog、Asset 第一波并行，确认图片用途、取得 235 × 95 × 84cm 官方尺寸和官方三维素材；授权通过后 Room 才读取住宅图，随后 Media 完成适配评估和空间合成。260cm 墙面与 235cm 沙发总余量为 25cm，但仍需披露插座、窗帘、踢脚线、门洞和搬运路径。具备官方 3D 资产时生成可拖拽、旋转和量尺的 Three.js 场景，否则降级为带真实 footprint 的近似模拟。
+- **S3 葡语语音**：Commerce 获取带 TTL 的价格、10 期免息、20/10 截止、7–10 个工作日和免运费事实；Language 生成 pt-BR 文本与 TTS。输出音频再次 ASR，并对金额、币种、期数、日期和配送数字逐字段精确比对。
+- **S4 买家实拍**：Asset Worker 从 DAM/UGC 查询经授权素材；返回空结果时明确回答目前没有，不把生成权限交给该 Worker，也不生成假晒单。替代为官方场景图、客户空间模拟或真实晒单回访登记。
+
+Supervisor 与 Worker 之间统一使用 JSON 契约，包括 `InputEnvelope`、`SupervisorDecision`、`DomainTask`、`DomainResult`、`CapabilityRequest`、`FactEnvelope`、`SupervisorReview`、`SupervisorState`、`FinalResponsePlan` 和 `ApprovalRequest`。LangGraph 保存状态和 checkpoint；结束条件由 Supervisor 根据目标满足度判断，并受最大轮数、时间、费用和重复决策保护。
+
+与柠柠剧情生成相比，本题不只要求人物或时间连续，更强调实时商品事实、价格时效、住宅隐私、媒体来源和交易副作用。EmoPlay 可复用的是状态、证据、checkpoint、审计与降级原则；Casa Lume 在此基础上增加跨领域 Supervisor、实时企业 API、多语言语音和交互式空间试摆。
